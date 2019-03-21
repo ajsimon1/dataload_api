@@ -66,6 +66,9 @@ def run(args):
     return processed[0][3]
 
 if __name__ == '__main__':
+    dac.build_logger()
     args = parser.parse_args()
     resp = run(args)
-    print(resp)
+    # TODO add logging warnings and info directly to core functions, the
+    # log file will still generate in the approriate folder, ddont need to
+    # call it from CLI

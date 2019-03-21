@@ -18,17 +18,20 @@ from bs4 import BeautifulSoup
 COLS = ['id', 'media', 'name', 'state1', 'state2', 'file', 'receipt',
         'format', 'load']
 
+basedir = os.path.abspath(os.path.dirname(__file__))
+
 # ######################## format logger #################################### #
 # grab date script is run for logging date
 
-def log_response():
+def build_logger():
     log_date = dt.datetime.now()
     # grab dir script exitst in, logging dir exists in that dir as well
-    basedir = os.path.abspath(os.path.dirname(__file__))
+    # TODO possibly differnet logpath as CLI arg
     log_dir = os.path.join(basedir,'log\\')
     # create logger config object with date in filename, filename concats actual
     # filename with basedir & logging dir
-    logging.basicConfig(filename=log_dir + '{}_dlscrape_log.txt'.format(log_date.strftime('%Y%m%d_%H%M%S')),
+    logging.basicConfig(filename=log_dir + '{}_dl_api_log.txt'                 \
+                                 ''.format(log_date.strftime('%Y%m%d_%H%M%S')),
                                  level=logging.INFO,
                                  format='%(asctime)s %(message)s')
 
@@ -42,7 +45,7 @@ def scrape_data(login_url, target_url, post_data, get_params):
         # check status code of returned response, 200 is expected if login was
         # successful, otherwise print status code
         if login_response.status_code != 200:
-            print('Uh oh, response code of {0} ' \
+            logging.warning('Uh oh, response code of {0} '                     \
                   'received back!?'.format(login_response.status_code))
         else:
             # if login was successful, scrape data off redirect page from login
