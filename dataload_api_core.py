@@ -67,7 +67,7 @@ def process_data(response):
     return delim
 
 # ##################### build result dataframe ############################### #
-def build_df(processed_data)
+def build_df(processed_data):
     # grab only 1st 9 cols of the parsed data, the rest is not needed, also
     # exculde last item, it's blank
     delim2 = [i[:9] for i in processed_data[:-1]]

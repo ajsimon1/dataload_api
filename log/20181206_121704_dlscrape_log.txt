@@ -1,5 +1,0 @@
-2018-12-06 12:17:06,919        id   media                                      name  state1    ...    receipt format load extension
-11   2201   email                      Meredith Corporation  format    ...      1,773         (e)      xlsx
-12  16561  upload  Ray Enterprises of Chesapeake Walk, Inc.  format    ...        451      1           xlsx
-
-[2 rows x 10 columns]

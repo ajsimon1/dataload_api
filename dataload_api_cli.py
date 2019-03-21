@@ -19,7 +19,7 @@ dl_work_url = dl_base_url + 'DL_Work.jsp'
 parser = argparse.ArgumentParser(description='CLI tool to automate clicking '  \
                                              'of UI button to kickoff '        \
                                              'dataload application processes')
-parser.add_argument('action' help='specify which action should be sent after'  \
+parser.add_argument('action', help='specify which action should be sent after'  \
                                   ' with query param to URL')
 parser.add_argument('-u', '--user', help='valid username to pass to login page')
 parser.add_argument('-p', '--password', help='valid pwd to pass to login page')
@@ -46,7 +46,7 @@ def run(args):
             'submissionId': '0'
         }
     # no submissionId needed for stage file job
-    else if args.action == 'stage':
+    elif args.action == 'stage':
         get_params = {
             'action': 'stageFiles'
         }
@@ -65,6 +65,7 @@ def run(args):
     processed = dac.process_data(response)
     return processed[0][3]
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     args = parser.parse_args()
-    run(args)
+    resp = run(args)
+    print(resp)
