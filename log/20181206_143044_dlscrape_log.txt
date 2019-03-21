@@ -1,0 +1,11 @@
+2018-12-06 14:30:47,625        id   media                                      name  state1    ...    receipt  format load extension
+4   17469     ftp                  Thermo Fisher Scientific  format    ...     70,034  63,100  (e)      xlsx
+5   17469     ftp                  Thermo Fisher Scientific  format    ...     70,034  63,693  (e)      xlsx
+6   17469     ftp                  Thermo Fisher Scientific  format    ...     70,034  60,639  (e)      xlsx
+7   17469     ftp                  Thermo Fisher Scientific  format    ...     70,034  56,431  (e)      xlsx
+8   17469     ftp                  Thermo Fisher Scientific  format    ...     70,034  63,705  (e)      xlsx
+9   17469     ftp                  Thermo Fisher Scientific  format    ...     70,034  44,129  (e)      xlsx
+11   2201   email                      Meredith Corporation  format    ...      1,773          (e)      xlsx
+12  16561  upload  Ray Enterprises of Chesapeake Walk, Inc.  format    ...        451       1           xlsx
+
+[8 rows x 10 columns]
