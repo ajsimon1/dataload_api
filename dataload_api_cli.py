@@ -29,9 +29,6 @@ parser.add_argument('-t', '--target_url', help='url to target adter login')
 parser.add_argument('-o', '--output', help='folder path to send error file '   \
                                             'created if login unsucessful')
 
-# ######################### CREATE LOG FILE ################################## #
-# TODO create logging functionality
-
 # ########################## MAIN FUNCTION ################################### #
 def run(args):
     # post data applicaple to form on login page
