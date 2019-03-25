@@ -30,8 +30,7 @@ def build_logger():
     log_dir = os.path.join(basedir,'log\\')
     # create logger config object with date in filename, filename concats actual
     # filename with basedir & logging dir
-    logging.basicConfig(filename=log_dir + '{}_dl_api_log.txt'                 \
-                                 ''.format(log_date.strftime('%Y%m%d_%H%M%S')),
+    logging.basicConfig(filename=log_dir + 'dl_api_log.txt',
                                  level=logging.INFO,
                                  format='%(asctime)s %(message)s')
 

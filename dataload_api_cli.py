@@ -6,6 +6,7 @@ CLI tool that can trigger actions on Dataload application by passing approiate
 query parameter 'action'
 '''
 import argparse
+import logging
 import requests
 
 import dataload_api_core as dac
@@ -63,12 +64,18 @@ def run(args):
 
     response = dac.scrape_data(login_url, target_url, post_data, get_params)
     processed = dac.process_data(response)
-    return processed[0][3]
+    if processed[0][3].strip() == 'Driver 1 importing' or processed[0][3].strip() == 'Driver 1 scanning':
+        logging.info('{} received, all is good'.format(processed[0][3]))
+    else:
+        logging.warning('Unexpected statement "{}" received back, check to '  \
+                        'ensure dataload is functionality'                     \
+                        ''.format(processed[0][3]))
+    return None
 
 if __name__ == '__main__':
     dac.build_logger()
     args = parser.parse_args()
-    resp = run(args)
+    run(args)
     # TODO add logging warnings and info directly to core functions, the
     # log file will still generate in the approriate folder, ddont need to
     # call it from CLI
